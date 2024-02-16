@@ -44,11 +44,11 @@
                Path.GetExtension(file.Name));
 
                 string path = Path.Combine(
-                    config.GetValue<string>("FilesStorage")!, "manga",
+                    config.GetValue<string>("FileStorage")!, "manga",
                     newFileName);
 
                 Directory.CreateDirectory(Path.Combine(
-                    config.GetValue<string>("FilesStorage")!,
+                    config.GetValue<string>("FileStorage")!,
                     "manga"));
 
                 await using FileStream fs = new(path, FileMode.Create);
