@@ -8,6 +8,10 @@
       "type": "mssql",
       "connectionId": "MangaHeavenReader-Database",
       "dynamicId": null
+    },
+    "secrets1": {
+      "type": "secrets",
+      "dynamicId": null
     }
   }
 }
