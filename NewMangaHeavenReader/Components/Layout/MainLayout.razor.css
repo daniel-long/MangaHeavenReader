@@ -41,7 +41,7 @@ main {
         justify-content: space-between;
     }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
+    .top-row ::deep a, .top-r0ow ::deep .btn-link {
         margin-left: 0;
     }
 }

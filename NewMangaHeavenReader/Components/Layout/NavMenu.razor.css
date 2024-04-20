@@ -5,7 +5,7 @@
     height: 2.5rem;
     color: white;
     position: absolute;
-    top: 0.5rem;
+    top: 1.5rem;
     right: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: url(logo3.png) repeat-x;
@@ -16,6 +16,11 @@
 }
 
 .top-row {
+    position: relative;
+    top: 5px;
+    left: 0px;
+    width: 233px;
+    height: 165px;
     background: url(logo3.png);
     background-size: cover;
 }
@@ -26,17 +31,18 @@
 }
 
 .logo {
+
     background: url(logo3.png) repeat-x;
     background-size: cover;
 }
 
 .bi {
     display: inline-block;
-    position: relative;
+    position: inherit;
     width: 1.25rem;
     height: 1.25rem;
-    margin-right: 0.75rem;
-    top: -1px;
+    margin-right: 1.75rem;
+    top: 150px;
     background: url(logo3.png);
     background-size: cover;
 }
@@ -79,7 +85,12 @@
 }
 
     .nav-item:first-of-type {
-        padding-top: 1rem;
+       /* position: absolute;*/
+        /*top: 300;*/
+        /*left: 0;
+    width: 0;
+    height: 0;*/ 
+     padding-top: 1rem;
     }
 
     .nav-item:last-of-type {
@@ -87,6 +98,7 @@
     }
 
     .nav-item ::deep .nav-link {
+      
         color: #d7d7d7;
         background: url(logo3.png);
         border: none;
@@ -99,6 +111,7 @@
     }
 
     .nav-item ::deep a.active {
+      
         background-color: rgba(0,0,0,0.37);
         color: white;
     }
