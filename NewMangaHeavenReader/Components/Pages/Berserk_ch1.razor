@@ -1,0 +1,36 @@
+﻿@page "/Berserk_ch1"
+
+@rendermode InteractiveServer
+
+@using Microsoft.AspNetCore.Components.Web
+
+<h1>Berserk Chapter 1</h1>
+
+<img src="@currentImage" alt="Image" style="max-width: 40%;" />
+
+<button @onclick="SwitchImage">Next Page</button>
+
+
+@code {
+    private int currentIndex = 0;
+    private string[] images = new[] { "/Berserk/B1.png", "/Berserk/B2.png", "/Berserk/B3.png" };
+
+    private string currentImage => images[currentIndex];
+
+    private void SwitchImage(MouseEventArgs args)
+    {
+        currentIndex = (currentIndex + 1) % images.Length;
+    }
+}
+
+@* @code {
+    private string currentImage = "/Berserk1.png";
+
+    private void SwitchImage(MouseEventArgs args)
+    {
+        currentImage = currentImage == "/banner2.png" ? "/Berserk1.png" : "/banner2.png";
+    }
+} *@
+
+@* <img src="/Pictures/Berserk.jpg" alt="My Image" style="max-width: 50%; max-height: 50%; object-fit: content;position:center;" />
+ *@
