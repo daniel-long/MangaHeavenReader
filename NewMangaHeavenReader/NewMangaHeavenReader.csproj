@@ -19,4 +19,9 @@
     <PackageReference Include="Syncfusion.Licensing" Version="25.1.40" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Berserk\CH2\" />
+    <Folder Include="wwwroot\Berserk\CH3\" />
+  </ItemGroup>
+
 </Project>
