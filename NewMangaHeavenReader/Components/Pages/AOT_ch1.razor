@@ -1,0 +1,62 @@
+﻿@page "/AOT_ch1"
+
+@rendermode InteractiveServer
+
+@using Microsoft.AspNetCore.Components.Web
+
+<h1>Attack On Titan</h1>
+
+<div class="image-container">
+    <button class="arrow-button" @onclick="PreviousPage">&#8592;</button>
+
+    <img src="@currentImage" alt="Image" class="centered-image" />
+
+    <button class="arrow-button" @onclick="NextPage">&#8594;</button>
+</div>
+
+<style>
+    .arrow-button {
+        font-size: 24px;
+        padding: 8px 16px;
+        background-color: #DA9833;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .arrow-button:hover {
+            background-color: #fc9f5c;
+        }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .centered-image {
+        width: 40%;
+        height: auto;
+        margin: 0 16px;
+    }
+</style>
+
+@code {
+    private int currentIndex = 0;
+    private string[] aotpages = new[] { "/AOT/AOT_Page_002.png", "/AOT/AOT_Page_003.png", "/AOT/AOT_Page_004.png", "/AOT/AOT_Page_005.png",
+    "/AOT/AOT_Page_006.png", "/AOT/AOT_Page_007.png", "/AOT/AOT_Page_008.png", "/AOT/AOT_Page_009.png",
+    "/AOT/AOT_Page_010.png", "/AOT/AOT_Page_011.png", "/AOT/AOT_Page_012.png", "/AOT/AOT_Page_013.png", "/AOT/AOT_Page_014.png" };
+
+    private string currentImage => aotpages[currentIndex];
+
+    private void NextPage(MouseEventArgs args)
+    {
+        currentIndex = (currentIndex + 1) % aotpages.Length;
+    }
+    private void PreviousPage(MouseEventArgs args)
+    {
+        currentIndex = (currentIndex - 1) % aotpages.Length;
+    }
+}
