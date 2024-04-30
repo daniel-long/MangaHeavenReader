@@ -1,10 +1,10 @@
-﻿@page "/Berserk_ch1"
+﻿@page "/Berserk_ch3"
 
 @rendermode InteractiveServer
 
 @using Microsoft.AspNetCore.Components.Web
 
-<h1>Berserk Chapter 1</h1>
+<h1>Berserk Chapter 3</h1>
 
 <div class="image-container">
     <button class="arrow-button" @onclick="PreviousPage">&#8592;</button>
@@ -39,14 +39,14 @@
     .centered-image {
         width: 40%;
         height: auto;
-        margin: 0 16px; 
+        margin: 0 16px;
     }
 </style>
 
 @code {
     private int currentIndex = 0;
-    private string[] images = new[] { "/Berserk/CH1/Berserk v01 _Page_001.png", "/Berserk/CH1/Berserk v01 _Page_002.png", "/Berserk/CH1/Berserk v01 _Page_003.png", "/Berserk/CH1/Berserk v01 _Page_004.png", "/Berserk/CH1/Berserk v01 _Page_005.png",
-    "/Berserk/CH1/Berserk v01 _Page_006.png","/Berserk/CH1/Berserk v01 _Page_007.png","/Berserk/CH1/Berserk v01 _Page_008.png","/Berserk/CH1/Berserk v01 _Page_009.png","/Berserk/CH1/Berserk v01 _Page_010.png",};
+    private string[] images = new[] { "/Berserk/CH1/Berserk v01 _Page_021.png", "/Berserk/CH1/Berserk v01 _Page_022.png", "/Berserk/CH1/Berserk v01 _Page_023.png", "/Berserk/CH1/Berserk v01 _Page_024.png", "/Berserk/CH1/Berserk v01 _Page_025.png",
+    "/Berserk/CH1/Berserk v01 _Page_026.png","/Berserk/CH1/Berserk v01 _Page_027.png","/Berserk/CH1/Berserk v01 _Page_028.png","/Berserk/CH1/Berserk v01 _Page_029.png","/Berserk/CH1/Berserk v01 _Page_030.png",};
 
     private string currentImage => images[currentIndex];
 
@@ -59,4 +59,3 @@
         currentIndex = (currentIndex - 1) % images.Length;
     }
 }
-
