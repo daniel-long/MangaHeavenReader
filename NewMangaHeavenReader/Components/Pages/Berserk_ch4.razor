@@ -1,10 +1,10 @@
-﻿@page "/AOT_ch1"
+﻿@page "/Berserk_ch4"
 
 @rendermode InteractiveServer
 
 @using Microsoft.AspNetCore.Components.Web
 
-<h1>Attack On Titan</h1>
+<h1>Berserk Chapter 4</h1>
 
 <div class="image-container">
     <button class="arrow-button" @onclick="PreviousPage">&#8592;</button>
@@ -45,18 +45,17 @@
 
 @code {
     private int currentIndex = 0;
-    private string[] Images = new[] { "/AOT/AOT_Page_002.png", "/AOT/AOT_Page_003.png", "/AOT/AOT_Page_004.png", "/AOT/AOT_Page_005.png",
-    "/AOT/AOT_Page_006.png", "/AOT/AOT_Page_007.png", "/AOT/AOT_Page_008.png", "/AOT/AOT_Page_009.png",
-    "/AOT/AOT_Page_010.png", "/AOT/AOT_Page_011.png", "/AOT/AOT_Page_012.png", "/AOT/AOT_Page_013.png", "/AOT/AOT_Page_014.png" };
+    private string[] images = new[] { "/Berserk/CH1/Berserk v01 _Page_031.png", "/Berserk/CH1/Berserk v01 _Page_032.png", "/Berserk/CH1/Berserk v01 _Page_033.png", "/Berserk/CH1/Berserk v01 _Page_034.png", "/Berserk/CH1/Berserk v01 _Page_035.png",
+    "/Berserk/CH1/Berserk v01 _Page_036.png","/Berserk/CH1/Berserk v01 _Page_037.png","/Berserk/CH1/Berserk v01 _Page_038.png","/Berserk/CH1/Berserk v01 _Page_039.png","/Berserk/CH1/Berserk v01 _Page_040.png",};
 
-    private string currentImage => Images[currentIndex];
+    private string currentImage => images[currentIndex];
 
     private void NextPage(MouseEventArgs args)
     {
-        currentIndex = (currentIndex + 1) % Images.Length;
+        currentIndex = (currentIndex + 1) % images.Length;
     }
     private void PreviousPage(MouseEventArgs args)
     {
-        currentIndex = (currentIndex - 1) % Images.Length;
+        currentIndex = (currentIndex - 1) % images.Length;
     }
 }
