@@ -1,0 +1,107 @@
+﻿@page "/MangaInfoInput"
+@using NewMangaHeavenReader.Data;
+
+<h3>Manga Information Input</h3>
+
+@* 
+    @using System.Net.Http.Json
+    @using System.ComponentModel.DataAnnotations
+    @using NewMangaHeavenReader.Data *@
+
+<EditForm Model ="@newManga" OnInvalidSubmit="AddManga" FormName="mangaForm">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+
+    <div class ="form-group">
+        <lable onformchange="Title">Tittle</lable>
+        <InputText id="title" @bind-Value="newManga.Title" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for="author">Author</label>
+        <InputText id="author" @bind-Value="newManga.Author" class="form-control" />
+        <ValidationMessage For="@(() => newManga.Author)" />
+    </div>
+
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <InputText id="genre" @bind-Value="newManga.Genre" class="form-control" />
+        <ValidationMessage For="@(() => newManga.Genre)" />
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <InputText id="genre" @bind-Value="newManga.Description" class="form-control" />
+        <ValidationMessage For="@(() => newManga.Description)" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save Manga</button>
+  @*   <InputText @bind-Value="newManga.Description"/>
+    <button type="submit"> Add NewManga</button> *@
+</EditForm>
+
+<ul>
+    @foreach (var manga in MangaInfoList)
+    {
+        <li>
+            @manga.Title
+        </li>
+    }
+</ul>
+@code{
+    private List <MangaInfo> MangaInfoList = new List<MangaInfo>();
+    private MangaInfo newManga = new MangaInfo();
+
+    private void AddManga(){
+        MangaInfoList.Add(newManga);
+        newManga = new MangaInfo();
+    }
+
+    // [Inject]
+    // private MangaDBContext DbContext.Mangas {get; set;}
+
+    // private async Task SaveManga()
+    // {
+    //     DbContext.Mangas.Add(newManga);
+    //     await DbContext.SaveChangeAsync();
+
+    // }
+
+}
+
+@* <EditForm Model="@newManga" OnValidSubmit="SaveManga">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <InputText id="title" @bind-Value="newManga.Title" class="form-control" />
+        <ValidationMessage For="@(() => newManga.Title)" />
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <InputText id="author" @bind-Value="newManga.Author" class="form-control" />
+        <ValidationMessage For="@(() => newManga.Author)" />
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <InputText id="genre" @bind-Value="newManga.Genre" class="form-control" />
+        <ValidationMessage For="@(() => newManga.Genre)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
+
+@code {
+    private MangaModel newManga = new Manga();
+
+    [Inject]
+    private ApplicationDbContext DbContext { get; set; } // Replace YourDataContext with your DbContext class
+
+    private async Task SaveManga()
+    {
+        DbContext.Mangas.Add(newManga);
+        await DbContext.SaveChangesAsync();
+        NavigationManager.NavigateTo("/mangalist"); // Redirect to manga list page after saving
+    }
+}
+ *@

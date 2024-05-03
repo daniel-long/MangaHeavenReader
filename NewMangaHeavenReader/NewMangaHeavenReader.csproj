@@ -15,8 +15,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Syncfusion.Blazor.Core" Version="25.1.40" />
-    <PackageReference Include="Syncfusion.Licensing" Version="25.1.40" />
+    <PackageReference Include="Syncfusion.Blazor.Core" Version="25.1.42" />
+    <PackageReference Include="Syncfusion.Licensing" Version="25.1.42" />
   </ItemGroup>
 
   <ItemGroup>
